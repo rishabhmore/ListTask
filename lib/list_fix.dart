@@ -45,8 +45,11 @@ class ListItemWidget extends StatefulWidget {
   final Item item;
   final Function(Item item) onIncrement;
 
-  const ListItemWidget(
-      {required this.item, required this.onIncrement, super.key});
+  const ListItemWidget({
+    required this.item,
+    required this.onIncrement,
+    super.key,
+  });
 
   @override
   State<ListItemWidget> createState() => _ListItemWidgetState();
