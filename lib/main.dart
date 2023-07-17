@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:list_task/list.dart';
+import 'package:list_task/bloc_fix.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,21 +28,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ListWidget()
-          ],
+        appBar: AppBar(
+          title: Text(widget.title),
         ),
-      )
-    );
+        body: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[ListWidget()],
+          ),
+        ));
   }
 }
