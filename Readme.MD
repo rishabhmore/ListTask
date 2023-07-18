@@ -28,3 +28,12 @@
 - We will be using Bloc for this Product Requirement.
 - Bloc State management emits only the changes that occur in the list. This will help in dispatching selective updates if the state becomes complex in the future.
 - The BLoC pattern reduces tight coupling between widgets. The `ListItemWidget` doesn't need to know about the parent `ListWidget`, it interacts with the state through the `ItemCubit`. Thus Separation of Concerns is achieved.
+
+# Code Changes for Optimizations 
+
+1. Convert `ListItemWidget` from Stateful to Stateless Widget. This removes unnecessary rebuilds of the Item widget.
+2. Added the `Equatable` package to enable list equality for the `Item` class.
+3. Added conditional  logic to BlocBuilder's `buildWhen` callback. The BlocBuilder widget will only rebuild if the condition in `buildWhen` callback.
+4. We have enforced, that Builder should only build if
+  - Previous list is not the same as Current list.
+  - Length of the Previous list does not match Length of the Current list.
